@@ -1,13 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
+import React from "react";
+import { StyleSheet, Text, SafeAreaView, ImageBackground, View } from 'react-native';
+import Logo from './Components/Logo';
+import Login from './Components/Login';
+import Btn from './Components/Btn';
+
+export default function App (){
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+
+    <SafeAreaView style={styles.container}>
+      <ImageBackground
+        source={require("./assets/backgroundimg.png")} resizeMode="cover"
+        style={styles.image}
+      >
+        <View style={styles.views}>
+          <Logo />
+          <Login />
+          <Btn />
+        </View>
+      </ImageBackground>
+    </SafeAreaView>
   );
+
 }
 
 const styles = StyleSheet.create({
@@ -15,6 +29,24 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: "center",
+    backgroundColor:'',
+    ImageBackground:"cover",
   },
+
+  views:{
+    width:400,
+    alignItems:"center",
+    justifyContent: "center",
+    alignContent: 'center',
+  },
+
+  image: {
+    flex: 1,
+    
+  },
+
 });
+
+
+
